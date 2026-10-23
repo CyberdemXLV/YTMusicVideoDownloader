@@ -3,10 +3,15 @@ import threading
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
-try:
-    import yt_dlp
-except ImportError:
-    yt_dlp = None
+import os
+import sys
+
+if getattr(sys, "frozen", False):
+    app_folder = os.path.dirname(sys.executable)
+else:
+    app_folder = os.path.dirname(os.path.abspath(__file__))
+
+ffmpeg_path = os.path.join(app_folder, "ffmpeg.exe")
 
 BG = "#11141b"
 PANEL = "#1d2330"
