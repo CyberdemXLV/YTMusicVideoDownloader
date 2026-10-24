@@ -155,7 +155,11 @@ class DownloaderApp:
                 opts = {
                     "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
                     "merge_output_format": "mp4",
-                    "outtmpl": os.path.join(self.output_dir, "%(title).180s.%(ext)s"),
+                    "outtmpl": os.path.join(self."outtmpl": os.path.join(
+    os.path.expanduser("~"),
+    "Downloads",
+    "%(title)s.%(ext)s"
+),
                     "noplaylist": True,
                     "windowsfilenames": True,
                     "progress_hooks": [self.progress_hook],
