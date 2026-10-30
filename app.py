@@ -114,12 +114,6 @@ class DownloaderApp:
 
     def start_download(self):
         if yt_dlp is None:
-            "outtmpl": os.path.join(
-    os.path.expanduser("~"),
-    "Music",
-    "YTMusicVideoDownloader",
-    "%(title)s.%(ext)s"
-),
             messagebox.showerror("Missing package",
                 "yt-dlp is not installed.\n\nOpen CMD in this folder and run:\npython -m pip install -r requirements.txt")
             return
