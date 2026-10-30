@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
 import os
-import sys
+import sysf
 
 if getattr(sys, "frozen", False):
     app_folder = os.path.dirname(sys.executable)
@@ -114,6 +114,12 @@ class DownloaderApp:
 
     def start_download(self):
         if yt_dlp is None:
+            "outtmpl": os.path.join(
+    os.path.expanduser("~"),
+    "Music",
+    "YTMusicVideoDownloader",
+    "%(title)s.%(ext)s"
+),
             messagebox.showerror("Missing package",
                 "yt-dlp is not installed.\n\nOpen CMD in this folder and run:\npython -m pip install -r requirements.txt")
             return
